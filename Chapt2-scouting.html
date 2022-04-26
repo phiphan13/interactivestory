@@ -1,0 +1,136 @@
+<html>
+<head>
+	<title> Chapter Two: Clues? </title>
+	<link rel="icon" href="assets/newLogo.png"/>
+
+	<style>
+		body
+			{	
+				background-image: url('assets/camp.jpg');
+				background-size: 2000px 1000px;
+			}
+
+		h1{
+			text-align: center;
+		}
+
+		p
+		{
+			font-weight: bold;
+			font-size: 20;
+			text-align: center;
+		}
+
+		#scroll1Div
+		{
+			left:900px;
+			top:200px;
+		}
+
+		.popup 
+		{
+ 			position: relative;
+  			display: inline-block;
+  			cursor: pointer;
+  			-webkit-user-select: none;
+ 			-moz-user-select: none;
+ 			-ms-user-select: none;
+  			user-select: none;
+		}
+
+	.popup .popuptext 
+		{
+ 			visibility: hidden;
+ 			width: 160px;
+ 			background-color: #555;
+  			color: #fff;
+ 			text-align: center;
+ 			border-radius: 6px;
+  			padding: 8px 0;
+  			position: absolute;
+  			z-index: 1;
+  			bottom: 125%;
+  			left: 50%;
+  			margin-left: -80px;
+		}
+
+	.popup .popuptext::after 
+		{
+ 			content: "";
+  			position: absolute;
+  			top: 100%;
+  			left: 50%;
+  			margin-left: -5px;
+  			border-width: 5px;
+  			border-style: solid;
+  			border-color: #555 transparent transparent transparent;
+		}
+
+/* Toggle this class - hide and show the popup */
+	.popup .show 
+		{
+  			visibility: visible;
+  			-webkit-animation: fadeIn 1s;
+  			animation: fadeIn 1s;
+		}
+
+
+	@-webkit-keyframes fadeIn 
+		{
+  			from {opacity: 0;} 
+  			to {opacity: 1;}
+		}
+
+	@keyframes fadeIn 
+		{
+ 			from {opacity: 0;}
+  			to {opacity:1 ;}
+		}
+	</style>
+
+		<script>
+			function inputController()
+			{
+				if(input1.value == 'hole' || input1.value =='A hole')
+				{
+					parent.location = 'chapter3-The Locked Door.html';
+				}else
+				{
+					parent.location = 'lose.html';
+				}
+			}
+
+			function myFunction() 
+		{
+ 	 		var popup = document.getElementById("myPopup");
+  			popup.classList.toggle("show");
+		}
+		</script>
+</head>
+<body>
+	<h1> Chapter Two: Clues? </h1>
+<p style="color:navy">
+	Wise choice! You chose to hide in the trees nearby a camp. You overheard a group of giants talk to each other about scrolls and a hidden passage to get in. The giants were talking to the new member of the giant army on how to passby.
+
+	<br>The Red Giant said, "To seek the path the others don't know, you must read what these scrolls unfold. There, the answer to the riddle is the code"</br>
+
+	<br> The White Giant said, "Read carefully, you will unravel the code to the passage. " </br>
+
+	<br> The Purple Giant said, "Uh..why are you guys talking like th-.. nevermind. Ditto " </br>
+
+	<br> The Yellow Giant said, "Aye, Aye captain." </br>
+
+	As they left, the yellow giant dropped the scroll! You quickly rushed to get the scroll and ran back into the trees and attempt the answer the riddle.
+</p>
+	<div id="scroll1Div" class = "popup" onclick="myFunction()"> <img src='assets/scroll1.png' width = 100>
+		<span class ="popuptext" id="myPopup">“I am weightless, but you can see me. Put me in a bucket, and I'll make it lighter. What am I?”</span>
+	</div>
+
+	<div>
+			<label style="color:silver"> Answer Thy Riddle!</label>
+			<input type="text" id='input1'>
+			<input type="button" value='Submit' onClick="inputController()">
+	</div>
+
+</body>
+</html>

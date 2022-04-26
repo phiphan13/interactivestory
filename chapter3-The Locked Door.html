@@ -1,0 +1,161 @@
+<!-- This is the view for Chapter 3 - Branch 4 -->
+<html>
+	<head>
+		<title> Chapter 3: The Locked Door </title>
+		<link rel="icon" href="assets/newLogo.png"/>
+		<style>
+			h1{
+				text-align: center;
+			}
+			body
+			{	
+				background-image: url('assets/door.jpg');
+				background-size: 2000px 1000px;
+			}
+			p
+			{
+				text-align: center;
+				font-size: 20;
+			}
+
+			#hint
+			{
+				left:1700px;
+				top:200px;
+			}
+
+		.popup 
+		{
+ 			position: relative;
+  			display: inline-block;
+  			cursor: pointer;
+  			-webkit-user-select: none;
+ 			-moz-user-select: none;
+ 			-ms-user-select: none;
+  			user-select: none;
+		}
+
+	.popup .popuptext 
+		{
+ 			visibility: hidden;
+ 			width: 160px;
+ 			background-color: #555;
+  			color: #fff;
+ 			text-align: center;
+ 			border-radius: 6px;
+  			padding: 8px 0;
+  			position: absolute;
+  			z-index: 1;
+  			bottom: 125%;
+  			left: 50%;
+  			margin-left: -80px;
+		}
+
+	.popup .popuptext::after 
+		{
+ 			content: "";
+  			position: absolute;
+  			top: 100%;
+  			left: 50%;
+  			margin-left: -5px;
+  			border-width: 5px;
+  			border-style: solid;
+  			border-color: #555 transparent transparent transparent;
+		}
+
+/* Toggle this class - hide and show the popup */
+	.popup .show 
+		{
+  			visibility: visible;
+  			-webkit-animation: fadeIn 1s;
+  			animation: fadeIn 1s;
+		}
+
+
+	@-webkit-keyframes fadeIn 
+		{
+  			from {opacity: 0;} 
+  			to {opacity: 1;}
+		}
+
+	@keyframes fadeIn 
+		{
+ 			from {opacity: 0;}
+  			to {opacity:1 ;}
+		}
+		</style>
+		<script>
+			function inputController()
+			{
+				if(input1.value == 'Red' && input2.value == 'White'  && input3.value == 'Purple'  && input4.value == 'Yellow')
+				{
+					parent.location = 'win.html';
+				}else
+				{
+					parent.location = 'lose.html';
+				}
+			}
+
+			function myFunction() 
+		{
+ 	 		var popup = document.getElementById("myPopup");
+  			popup.classList.toggle("show");
+		}
+		</script>
+	</head>
+	<body>	
+		<h1 style="color:silver;">Chapter 3: Gem Stones </h1>
+
+		<p style="color:silver;">
+			Congratulations you are now in the hidden pathway. You tread carefully in the dark as candles begin to emit light. The sound of creepy crawlers all around as they snare and hiss at you. Bugs scatter each time you kick a rock over. You reached a door where there are colorful rocks around you. You notice there are 4 holes that need to filled in. You assume you have to have put the colorful rocks in. Put the right color gems in to proceed. The final battle is just right pass this door!
+
+
+		</p>
+
+		<div id="hint" class = "popup" onclick="myFunction()"> <img src='assets/scroll3.png' width = 100>
+			<span class ="popuptext" id="myPopup">Hint: Hmm, I wonder if the giants mean anything? </span>
+		</div>
+		<div>
+				<label style="color:silver;">Select:</label>
+				<select id="input1">
+					<option selected>Choose...</option>
+					<option>White</option>
+					<option>Purple</option>
+					<option>Red</option>
+					<option>Yellow</option>
+				</select>
+		</div>
+
+		<div>
+				<label style="color:silver;">Select:</label>
+				<select id="input2">
+					<option selected>Choose...</option>
+					<option>Pink</option>
+					<option>Purple</option>
+					<option>Yellow</option>
+					<option>White</option>
+				</select>
+		</div>
+		<div>
+				<label style="color:silver;">Select:</label>
+				<select id="input3">
+					<option selected>Choose...</option>
+					<option>Green</option>
+					<option>Blue</option>
+					<option>Purple</option>
+					<option>White</option>
+				</select>
+		</div>
+		<div>
+				<label style="color:silver;">Select:</label>
+				<select id="input4">
+					<option selected>Choose...</option>
+					<option>Pink</option>
+					<option>Yellow</option>
+					<option>Purple</option>
+					<option>Red</option>
+				</select>
+		</div>
+		<input type="button" onClick="inputController()" value='Submit'>
+		</body>	
+</html>
